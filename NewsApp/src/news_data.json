@@ -1,0 +1,37 @@
+[
+  {
+    "u_id": 0,
+    "author": "Lazare Betje",
+    "title": "Lorem ipsum dolor sit amet, consectet",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "imageUrl": "https://picsum.photos/id/1/600/800"
+  },
+  {
+    "u_id": 1,
+    "author": "Longina Julie",
+    "title": "Lorem ipsum",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "imageUrl": "https://picsum.photos/id/10/600/800"
+  },
+  {
+    "u_id": 2,
+    "author": "Kamil Roeland",
+    "title": "Lorem ipsum dolor",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "imageUrl": "https://picsum.photos/id/20/600/800"
+  },
+  {
+    "u_id": 3,
+    "author": "Leocadia Tonka",
+    "title": "Sit amet, consectet",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "imageUrl": "https://picsum.photos/id/30/600/800"
+  },
+  {
+    "u_id": 4,
+    "author": "Chantel Nea",
+    "title": "Ipsum amet, consectet",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "imageUrl": "https://picsum.photos/id/40/600/800"
+  }
+]
