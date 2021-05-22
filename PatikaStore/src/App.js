@@ -12,8 +12,11 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.headerText}>PATIKASTORE</Text>
-      <StoreSearchBar />
-      <FlatList data={store_data} renderItem={renderItems} />
+      <FlatList
+        ListHeaderComponent={() => <StoreSearchBar />}
+        data={store_data}
+        renderItem={renderItems}
+      />
     </SafeAreaView>
   );
 };
