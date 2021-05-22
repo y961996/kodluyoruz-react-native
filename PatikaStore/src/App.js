@@ -1,10 +1,23 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {SafeAreaView, StyleSheet, View, TextInput} from 'react-native';
 const App = () => {
+  const [val, setVal] = useState('');
+  const textChange = queryText => {
+    setVal(queryText);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>Hello World</Text>
+        <TextInput
+          autoCapitalize="none"
+          autoCorrect={false}
+          clearButtonMode="always"
+          value={val}
+          onChangeText={textChange}
+          placeholder="Ara..."
+          style={styles.search_box}
+        />
       </View>
     </SafeAreaView>
   );
@@ -12,7 +25,14 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: 'gray',
+  },
+  search_box: {
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    margin: 10,
+    borderRadius: 10,
   },
 });
 
