@@ -13,6 +13,7 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <Text style={styles.headerText}>PATIKASTORE</Text>
       <FlatList
+        columnWrapperStyle={styles.row}
         ListHeaderComponent={() => <StoreSearchBar />}
         data={store_data}
         keyExtractor={extractKeys}
@@ -35,6 +36,10 @@ const styles = StyleSheet.create({
     color: 'purple',
     margin: 10,
     marginBottom: 3,
+  },
+  row: {
+    flex: 1,
+    justifyContent: 'space-evenly',
   },
 });
 

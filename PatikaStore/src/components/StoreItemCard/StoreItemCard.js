@@ -9,6 +9,7 @@ const StoreItemCard = ({items}) => {
       <Image style={styles.image} source={{uri: items.imgURL}} />
       <Text style={styles.titleText}>{items.title}</Text>
       <Text style={styles.priceText}>{items.price}</Text>
+      {!items.inStock && <Text style={styles.inStockText}>STOKTA YOK</Text>}
     </View>
   );
 };
