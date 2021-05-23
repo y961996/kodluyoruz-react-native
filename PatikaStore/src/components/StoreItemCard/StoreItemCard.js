@@ -7,8 +7,8 @@ const StoreItemCard = ({items}) => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={{uri: items.imgURL}} />
-      <Text>{items.title}</Text>
-      <Text>{items.price}</Text>
+      <Text style={styles.titleText}>{items.title}</Text>
+      <Text style={styles.priceText}>{items.price}</Text>
     </View>
   );
 };
