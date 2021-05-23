@@ -2,12 +2,12 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, FlatList, Text} from 'react-native';
 
 import StoreSearchBar from './components/StoreSearchBar';
+import StoreItemCard from './components/StoreItemCard';
 import store_data from './store_data.json';
 
 const App = () => {
-  const renderItems = ({item}) => {
-    console.log(item);
-  };
+  const renderStoreData = ({item}) => <StoreItemCard items={item} />;
+  const extractKeys = (item, index) => item.id.toString();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -15,7 +15,9 @@ const App = () => {
       <FlatList
         ListHeaderComponent={() => <StoreSearchBar />}
         data={store_data}
-        renderItem={renderItems}
+        keyExtractor={extractKeys}
+        numColumns={2}
+        renderItem={renderStoreData}
       />
     </SafeAreaView>
   );
