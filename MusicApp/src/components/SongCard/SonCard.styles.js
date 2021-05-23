@@ -43,4 +43,8 @@ export default StyleSheet.create({
   content_container: {
     flexDirection: 'row',
   },
+  album: {
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+  },
 });
