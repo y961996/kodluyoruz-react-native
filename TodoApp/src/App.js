@@ -5,6 +5,7 @@ import AddItemCard from './components/AddItemCard/AddItemCard';
 import TodoItemCard from './components/TodoItemCard/TodoItemCard';
 
 const App = () => {
+  const [todoId, setTodoId] = useState(0);
   const [todoList, setTodoList] = useState([]);
   const [todoListSize, setTodoListSize] = useState(0);
   const [todoButtonColor, setTodoButtonColor] = useState('#808080');
@@ -17,11 +18,19 @@ const App = () => {
   };
 
   const addTodoItem = () => {
-    setTodoList([...todoList, currentInputText]);
+    setTodoId(todoId + 1);
+    setTodoList([
+      ...todoList,
+      {
+        id: todoId.toString(),
+        val: currentInputText,
+      },
+    ]);
     setTodoListSize(todoListSize + 1);
     setCurrentInputText('');
     handleButtonDisable();
   };
+
   const checkInput = text => {
     if (text.trim().length > 0) {
       setTodoButtonColor('#fea500');
@@ -31,7 +40,12 @@ const App = () => {
     }
     setCurrentInputText(text);
   };
-  const renderTodo = ({item}) => <TodoItemCard todo={item} />;
+
+  const toggleTodo = todo => console.log(todo);
+
+  const renderTodo = ({item}) => (
+    <TodoItemCard todo={item} handleToggleTodo={toggleTodo} />
+  );
 
   return (
     <SafeAreaView style={styles.container}>

@@ -2,13 +2,15 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'purple',
-    height: 40,
-    margin: 10,
+    backgroundColor: '#7da453',
+    height: 50,
+    marginBottom: 10,
     borderRadius: 10,
     justifyContent: 'center',
   },
   todo_item_text: {
-    color: 'pink',
+    color: 'white',
+    marginLeft: 10,
+    fontSize: 18,
   },
 });
