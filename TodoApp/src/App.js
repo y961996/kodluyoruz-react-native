@@ -53,7 +53,9 @@ const App = () => {
     // eslint-disable-next-line no-bitwise
     ~removeIndex && tempTodoList.splice(removeIndex, 1);
     setTodoList(tempTodoList);
-    setTodoListSize(todoListSize - 1);
+    if (!todoList[removeIndex].done) {
+      setTodoListSize(todoListSize - 1);
+    }
   };
 
   const renderTodo = ({item}) => (
