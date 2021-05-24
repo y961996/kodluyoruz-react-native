@@ -8,5 +8,13 @@ export default StyleSheet.create({
     paddingBottom: 15,
     borderRadius: 10,
   },
-  search_box: {},
+  search_box: {
+    paddingBottom: 0,
+  },
+  horizontal_line: {
+    borderBottomColor: '#798e98',
+    borderBottomWidth: 1,
+    marginBottom: 7,
+    marginTop: 0,
+  },
 });
