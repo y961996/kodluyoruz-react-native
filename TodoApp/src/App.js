@@ -50,8 +50,7 @@ const App = () => {
   const handleHoldDeletTodoItem = id => {
     let removeIndex = todoList.map(todo => todo.id).indexOf(id);
     let tempTodoList = [...todoList];
-    // eslint-disable-next-line no-bitwise
-    ~removeIndex && tempTodoList.splice(removeIndex, 1);
+    tempTodoList.splice(removeIndex, 1);
     setTodoList(tempTodoList);
     if (!todoList[removeIndex].done) {
       setTodoListSize(todoListSize - 1);
