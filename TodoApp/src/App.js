@@ -41,11 +41,7 @@ const App = () => {
     setCurrentInputText(text);
   };
 
-  const toggleTodo = todo => console.log(todo);
-
-  const renderTodo = ({item}) => (
-    <TodoItemCard todo={item} handleToggleTodo={toggleTodo} />
-  );
+  const renderTodo = ({item}) => <TodoItemCard todo={item} />;
 
   return (
     <SafeAreaView style={styles.container}>
