@@ -27,6 +27,8 @@ const TodoItemCard = ({todo, handleTodoDisable, handleHoldDeletTodoItem}) => {
   const handleHoldDelete = () => {
     const id = todo.id;
     handleHoldDeletTodoItem(id);
+    //TODO: This needs to be called somewhere after one element deleted.
+    // toggleTodoItemTextDecoration();
   };
 
   return (
