@@ -43,6 +43,13 @@ const App = () => {
 
   const renderTodo = ({item}) => <TodoItemCard todo={item} />;
 
+  // TODO: This funtion needs to update the counter every time user toggle todo item.
+  const handleTodoDisable = () => {
+    let listSize = todoList.filter(
+      todo => todo.cardTextDecoration !== 'none',
+    ).length;
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.todo_item_container}>
@@ -77,16 +84,16 @@ const styles = StyleSheet.create({
   },
   todo_item_container: {
     flex: 1,
-    margin: 20,
+    margin: 10,
   },
   todo_list: {
     flex: 1,
   },
   add_item_container: {
-    margin: 20,
+    margin: 10,
+    marginBottom: 20,
   },
   header_container: {
-    flex: 1,
     flexDirection: 'row',
   },
   headertext: {
@@ -94,6 +101,7 @@ const styles = StyleSheet.create({
     color: '#ffa206',
     fontWeight: 'bold',
     fontSize: 38,
+    marginBottom: 20,
   },
   headerTodoCount: {
     color: '#ffa206',

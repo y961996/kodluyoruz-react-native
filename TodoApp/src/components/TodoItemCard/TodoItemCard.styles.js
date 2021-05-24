@@ -8,10 +8,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   todo_item_text: {
-    color: 'white',
     marginLeft: 10,
     fontSize: 18,
     textDecorationStyle: 'solid',
-    textDecorationColor: 'black',
   },
 });
