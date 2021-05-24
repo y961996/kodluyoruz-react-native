@@ -24,6 +24,7 @@ const App = () => {
       {
         id: todoId.toString(),
         val: currentInputText,
+        done: false,
       },
     ]);
     setTodoListSize(todoListSize + 1);
@@ -41,14 +42,14 @@ const App = () => {
     setCurrentInputText(text);
   };
 
-  const renderTodo = ({item}) => <TodoItemCard todo={item} />;
-
-  // TODO: This funtion needs to update the counter every time user toggle todo item.
   const handleTodoDisable = () => {
-    let listSize = todoList.filter(
-      todo => todo.cardTextDecoration !== 'none',
-    ).length;
+    let listSize = todoList.filter(todo => !todo.done).length;
+    setTodoListSize(listSize);
   };
+
+  const renderTodo = ({item}) => (
+    <TodoItemCard todo={item} handleTodoDisable={handleTodoDisable} />
+  );
 
   return (
     <SafeAreaView style={styles.container}>

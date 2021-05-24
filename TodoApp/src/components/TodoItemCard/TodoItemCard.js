@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 import styles from './TodoItemCard.styles';
 
-const TodoItemCard = ({todo}) => {
+const TodoItemCard = ({todo, handleTodoDisable}) => {
   const [cardTextDecoration, setCardTextDecoration] = useState('none');
   const [todoItemTextColor, setTodoItemTextColor] = useState('white');
   const [cardColor, setCardColor] = useState('#7da453');
@@ -13,10 +13,14 @@ const TodoItemCard = ({todo}) => {
       setCardTextDecoration('line-through');
       setCardColor('#36474f');
       setTodoItemTextColor('#7d837e');
+      todo.done = true;
+      handleTodoDisable();
     } else {
       setCardTextDecoration('none');
       setCardColor('#7da453');
       setTodoItemTextColor('white');
+      todo.done = false;
+      handleTodoDisable();
     }
   };
 
