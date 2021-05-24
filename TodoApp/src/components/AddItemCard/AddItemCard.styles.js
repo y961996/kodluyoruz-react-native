@@ -10,6 +10,7 @@ export default StyleSheet.create({
   },
   search_box: {
     paddingBottom: 0,
+    color: 'white',
   },
   horizontal_line: {
     borderBottomColor: '#798e98',

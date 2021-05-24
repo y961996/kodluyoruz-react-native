@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 import styles from './TodoItemCard.styles';
 
-const TodoItemCard = ({todo, handleTodoDisable}) => {
+const TodoItemCard = ({todo, handleTodoDisable, handleHoldDeletTodoItem}) => {
   const [cardTextDecoration, setCardTextDecoration] = useState('none');
   const [todoItemTextColor, setTodoItemTextColor] = useState('white');
   const [cardColor, setCardColor] = useState('#7da453');
@@ -24,9 +24,16 @@ const TodoItemCard = ({todo, handleTodoDisable}) => {
     }
   };
 
+  const handleHoldDelete = () => {
+    const id = todo.id;
+    handleHoldDeletTodoItem(id);
+  };
+
   return (
     <View style={[styles.container, {backgroundColor: cardColor}]}>
-      <TouchableOpacity onPress={toggleTodoItemTextDecoration}>
+      <TouchableOpacity
+        onPress={toggleTodoItemTextDecoration}
+        onLongPress={handleHoldDelete}>
         <Text
           style={[
             styles.todo_item_text,

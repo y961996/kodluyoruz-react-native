@@ -47,8 +47,21 @@ const App = () => {
     setTodoListSize(listSize);
   };
 
+  const handleHoldDeletTodoItem = id => {
+    let removeIndex = todoList.map(todo => todo.id).indexOf(id);
+    let tempTodoList = [...todoList];
+    // eslint-disable-next-line no-bitwise
+    ~removeIndex && tempTodoList.splice(removeIndex, 1);
+    setTodoList(tempTodoList);
+    setTodoListSize(todoListSize - 1);
+  };
+
   const renderTodo = ({item}) => (
-    <TodoItemCard todo={item} handleTodoDisable={handleTodoDisable} />
+    <TodoItemCard
+      todo={item}
+      handleTodoDisable={handleTodoDisable}
+      handleHoldDeletTodoItem={handleHoldDeletTodoItem}
+    />
   );
 
   return (
