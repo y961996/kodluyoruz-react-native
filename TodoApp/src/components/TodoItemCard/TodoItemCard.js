@@ -3,10 +3,10 @@ import {View, Text} from 'react-native';
 
 import styles from './TodoItemCard.styles';
 
-const TodoItemCard = () => {
+const TodoItemCard = ({todo}) => {
   return (
-    <View>
-      <Text style={styles.temp}>Test Todo Item Card</Text>
+    <View style={styles.container}>
+      <Text style={styles.todo_item_text}>{todo}</Text>
     </View>
   );
 };

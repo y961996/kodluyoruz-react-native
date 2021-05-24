@@ -5,32 +5,33 @@ import AddItemCard from './components/AddItemCard/AddItemCard';
 import TodoItemCard from './components/TodoItemCard/TodoItemCard';
 
 const App = () => {
-  const [todoList, setTodoList] = useState([
-    '2123',
-    '2312',
-    'qasdasda',
-    'daggşkm dkls ma as',
-  ]);
+  const [todoList, setTodoList] = useState([]);
   const [todoListSize, setTodoListSize] = useState(0);
   const [todoButtonColor, setTodoButtonColor] = useState('#808080');
   const [todoButtonDisabled, setTodoButtonDisabled] = useState(true);
   const [currentInputText, setCurrentInputText] = useState('');
 
+  const handleButtonDisable = () => {
+    setTodoButtonColor('#808080');
+    setTodoButtonDisabled(true);
+  };
+
   const addTodoItem = () => {
     setTodoList([...todoList, currentInputText]);
     setTodoListSize(todoListSize + 1);
+    setCurrentInputText('');
+    handleButtonDisable();
   };
   const checkInput = text => {
     if (text.trim().length > 0) {
       setTodoButtonColor('#fea500');
       setTodoButtonDisabled(false);
     } else {
-      setTodoButtonColor('#808080');
-      setTodoButtonDisabled(true);
+      handleButtonDisable();
     }
     setCurrentInputText(text);
   };
-  const renderTodo = ({item}) => <Text style={{color: 'white'}}>{item}</Text>;
+  const renderTodo = ({item}) => <TodoItemCard todo={item} />;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -68,7 +69,9 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 20,
   },
-  todo_list: {},
+  todo_list: {
+    flex: 1,
+  },
   add_item_container: {
     margin: 20,
   },
