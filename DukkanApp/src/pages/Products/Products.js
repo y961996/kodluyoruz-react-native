@@ -1,9 +1,11 @@
 import React from 'react';
-import {SafeAreaView, ActivityIndicator, FlatList, Text} from 'react-native';
+import {SafeAreaView, FlatList, Text} from 'react-native';
 import Config from 'react-native-config';
 
 import ProductCard from '../../components/ProductCard';
 import useFetch from '../../hooks/useFetch';
+import Loading from '../../components/Loading';
+import Error from '../../components/Error';
 
 //import styles from './Products.style';
 
@@ -13,20 +15,14 @@ const Products = () => {
   const renderProduct = ({item}) => <ProductCard product={item} />;
 
   if (loading) {
-    // Andorid'te ActivityIndicator default olarak bir color
-    // prop almadığı için eğer color verilmezse gözüknüyor.
-    return <ActivityIndicator size="large" color="#0000ff" />;
+    return <Loading />;
   }
 
   if (error) {
-    return <Text>{error}</Text>;
+    return <Error />;
   }
 
-  return (
-    <SafeAreaView>
-      <FlatList data={data} renderItem={renderProduct} />
-    </SafeAreaView>
-  );
+  return <FlatList data={data} renderItem={renderProduct} />;
 };
 
 export default Products;
