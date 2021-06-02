@@ -12,11 +12,12 @@ import styles from './FoodCategory.style';
 const FoodCategory = ({navigation}) => {
   const {error, loading, data} = useFetch(Config.API_URL_CATEGORIES);
 
+  const handleCategorySelect = id => {
+    navigation.navigate('FoodsScreen', {id});
+  };
+
   const renderCategory = ({item}) => (
-    <CategoryCard
-      product={item}
-      onSelect={() => console.log(item.idCategory)}
-    />
+    <CategoryCard product={item} onSelect={() => handleCategorySelect()} />
   );
 
   if (loading) {
