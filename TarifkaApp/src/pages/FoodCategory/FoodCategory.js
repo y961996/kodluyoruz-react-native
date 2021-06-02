@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, Text, SafeAreaView} from 'react-native';
+import {FlatList} from 'react-native';
 import Config from 'react-native-config';
 
 import useFetch from '../../hooks/useFetch';
@@ -12,12 +12,15 @@ import styles from './FoodCategory.style';
 const FoodCategory = ({navigation}) => {
   const {error, loading, data} = useFetch(Config.API_URL_CATEGORIES);
 
-  const handleCategorySelect = id => {
-    navigation.navigate('FoodsScreen', {id});
+  const handleCategorySelect = category => {
+    navigation.navigate('FoodsScreen', {category});
   };
 
   const renderCategory = ({item}) => (
-    <CategoryCard product={item} onSelect={() => handleCategorySelect()} />
+    <CategoryCard
+      product={item}
+      onSelect={() => handleCategorySelect(item.strCategory)}
+    />
   );
 
   if (loading) {
