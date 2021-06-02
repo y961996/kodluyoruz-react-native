@@ -8,8 +8,6 @@ import FoodCategory from './pages/FoodCategory';
 import Foods from './pages/Foods';
 import Detail from './pages/Detail';
 
-// pagelerin headerlarini customize edebilirim.
-
 const Router = () => {
   return (
     <NavigationContainer>
