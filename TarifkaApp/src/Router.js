@@ -17,7 +17,8 @@ const Router = () => {
           component={FoodCategory}
           options={{
             title: 'Categories',
-            headerTitleStyle: {textAlign: 'center', color: '#fea500'},
+            headerTitleStyle: {color: '#fea500'},
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
@@ -25,7 +26,8 @@ const Router = () => {
           component={Foods}
           options={{
             title: 'Meals',
-            headerTitleStyle: {textAlign: 'center', color: '#fea500'},
+            headerTitleStyle: {color: '#fea500'},
+            headerTitleAlign: 'center',
           }}
         />
         <Stack.Screen
@@ -33,7 +35,8 @@ const Router = () => {
           component={Detail}
           options={{
             title: 'Detail',
-            headerTitleStyle: {textAlign: 'center', color: '#fea500'},
+            headerTitleStyle: {color: '#fea500'},
+            headerTitleAlign: 'center',
           }}
         />
       </Stack.Navigator>
