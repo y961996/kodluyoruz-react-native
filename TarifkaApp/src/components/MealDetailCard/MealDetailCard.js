@@ -1,11 +1,22 @@
 import React from 'react';
-import {View, ScrollView, Text, Image} from 'react-native';
+import {
+  View,
+  ScrollView,
+  TouchableOpacity,
+  Text,
+  Image,
+  Linking,
+} from 'react-native';
 
 import styles from './MealDetailCard.style';
 
 const MealDetailCard = ({meal}) => {
   const currentMeal = meal[0];
-  //{currentMeal.strYoutube}
+
+  const handlePressYoutubeButton = () => {
+    Linking.openURL(currentMeal.strYoutube);
+  };
+
   return (
     <ScrollView style={styles.container}>
       <Image style={styles.image} source={{uri: currentMeal.strMealThumb}} />
@@ -16,7 +27,9 @@ const MealDetailCard = ({meal}) => {
       <View style={styles.horizontal_line} />
       <View style={styles.body_container}>
         <Text style={styles.instructions}>{currentMeal.strInstructions}</Text>
-        <Text style={styles.youtube}>Watch On Youtube</Text>
+        <TouchableOpacity onPress={handlePressYoutubeButton}>
+          <Text style={styles.youtube}>Watch On Youtube</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
