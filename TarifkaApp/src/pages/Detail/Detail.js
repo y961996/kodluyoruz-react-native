@@ -1,5 +1,4 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import Config from 'react-native-config';
 
 import useFetch from '../../hooks/useFetch';
@@ -23,7 +22,7 @@ const Detail = ({route}) => {
     return <Error />;
   }
 
-  return <MealDetailCard />;
+  return <MealDetailCard meal={data.meals} />;
 };
 
 export default Detail;
