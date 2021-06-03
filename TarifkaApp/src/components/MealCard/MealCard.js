@@ -3,12 +3,16 @@ import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
 
 import styles from './MealCard.style';
 
-const MealCard = ({meal}) => {
+const MealCard = ({meal, onSelect}) => {
   return (
-    <TouchableWithoutFeedback>
-      <View>
+    <TouchableWithoutFeedback onPress={onSelect}>
+      <View style={styles.container}>
         <Image style={styles.image} source={{uri: meal.strMealThumb}} />
-        <Text>{meal.strMeal}</Text>
+        <View style={styles.bottom_container}>
+          <Text style={styles.meal_text} numberOfLines={1}>
+            {meal.strMeal}
+          </Text>
+        </View>
       </View>
     </TouchableWithoutFeedback>
   );

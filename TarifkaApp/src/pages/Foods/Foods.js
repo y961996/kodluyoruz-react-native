@@ -9,13 +9,15 @@ import MealCard from '../../components/MealCard';
 
 import styles from './Foods.style';
 
-const Foods = ({route}) => {
+const Foods = ({route, navigation}) => {
   const {category} = route.params;
   const {loading, error, data} = useFetch(
     `${Config.API_URL_MEAL_BY_CATEGORY}${category}`,
   );
 
-  const handleMealSelect = () => {};
+  const handleMealSelect = idMeal => {
+    navigation.navigate('DetailScreen', {idMeal});
+  };
 
   const renderMeal = ({item}) => (
     <MealCard meal={item} onSelect={() => handleMealSelect(item.idMeal)} />
