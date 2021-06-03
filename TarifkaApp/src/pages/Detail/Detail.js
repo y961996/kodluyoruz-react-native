@@ -6,7 +6,7 @@ import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 import MealDetailCard from '../../components/MealDetailCard';
 
-import styles from './Detail.style';
+//import styles from './Detail.style';
 
 const Detail = ({route}) => {
   const {idMeal} = route.params;
