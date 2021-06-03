@@ -11,10 +11,31 @@ import Detail from './pages/Detail';
 const Router = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="FoodCategoryScreen" component={FoodCategory} />
-        <Stack.Screen name="FoodsScreen" component={Foods} />
-        <Stack.Screen name="DetailScreen" component={Detail} />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="FoodCategoryScreen"
+          component={FoodCategory}
+          options={{
+            title: 'Categories',
+            headerTitleStyle: {textAlign: 'center', color: '#fea500'},
+          }}
+        />
+        <Stack.Screen
+          name="FoodsScreen"
+          component={Foods}
+          options={{
+            title: 'Meals',
+            headerTitleStyle: {textAlign: 'center', color: '#fea500'},
+          }}
+        />
+        <Stack.Screen
+          name="DetailScreen"
+          component={Detail}
+          options={{
+            title: 'Detail',
+            headerTitleStyle: {textAlign: 'center', color: '#fea500'},
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
